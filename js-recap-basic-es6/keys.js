@@ -25,3 +25,5 @@ console.log(glass);
 Object.freeze(glass);
 glass.source = "Bangladesh";
 console.log(glass);
+
+//seal

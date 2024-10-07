@@ -7,3 +7,5 @@ const arrayMax = Math.max(...numbers);
 
 //use spread operator to copy
 
+//use spread operator to join
+//passing argument to spread operator
