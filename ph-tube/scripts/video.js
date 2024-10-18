@@ -6,6 +6,15 @@ function getTimeString(time) {
   remainingSeconds = remainingSeconds % 60;
   return `${hours}h ${minutes}m ${remainingSeconds}s`;
 }
+//remove active class
+const removeActiveClass = () =>{
+  const buttons = document.getElementsByClassName("category-btn");
+  console.log(buttons);
+  for (let btn of buttons){
+    btn.classList.remove("active");
+  }
+}
+
 // 1. Fetch, Load ans Show Catagories on html
 //create Load Catagories
 const loadCatagories = () => {
@@ -29,6 +38,10 @@ const loadCategoryVideos = (id) => {
   fetch(`https://openapi.programming-hero.com/api/phero-tube/category/${id}`)
     .then((res) => res.json())
     .then((data) => {
+      //remove active class
+      removeActiveClass();
+
+
       const activeBtn = document.getElementById(`btn-${id}`);
       // console.log(activeBtn);
       activeBtn.classList.add("active");
